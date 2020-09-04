@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "zoos")
-public class Zoos {
+public class Zoos extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,6 +39,9 @@ public class Zoos {
         return zooid;
     }
 
+    public void setZooid(long zooid) {
+        this.zooid = zooid;
+    }
 
     public String getZooname() {
         return zooname;

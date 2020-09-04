@@ -42,5 +42,6 @@ public class ZooServiceImpl implements ZooService {
         for (Telephones p : zoo.getPhones()){
             newZoo.getPhones().add(new Telephones(p.getPhonenumber(), p.getPhonetype(), newZoo));
         }
+        return zoorepos.save(newZoo);
     }
 }

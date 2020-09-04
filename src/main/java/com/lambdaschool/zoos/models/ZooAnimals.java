@@ -4,10 +4,13 @@ package com.lambdaschool.zoos.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "zooanimals")
-public class ZooAnimals {
+@IdClass(ZooAnimals.class)
+public class ZooAnimals extends Auditable implements Serializable {
 
     @Id
     @ManyToOne
@@ -62,4 +65,17 @@ public class ZooAnimals {
         this.incomingzoo = incomingzoo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ZooAnimals that = (ZooAnimals) o;
+        return ((this.zoo == null) ? 0 : this.getZoo().getZooid()) == ((that.zoo == null) ? 0 : that.getZoo().getZooid()) &&
+                ((this.animal == null) ? 0 : this.getAnimal().getAnimalid()) == ((that.animal == null) ? 0 : that.getAnimal().getAnimalid());
+    }
+
+    @Override
+    public int hashCode() {
+        return 37;
+    }
 }

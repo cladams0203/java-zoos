@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "animals")
-public class Animals {
+public class Animals extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,19 +25,14 @@ public class Animals {
     public Animals() {
     }
 
-    public Animals(long animalid, String animaltype, Set<ZooAnimals> zoos) {
-        this.animalid = animalid;
+    public Animals( String animaltype) {
         this.animaltype = animaltype;
-        this.zoos = zoos;
     }
 
     public long getAnimalid() {
         return animalid;
     }
 
-    public void setAnimalid(long animalid) {
-        this.animalid = animalid;
-    }
 
     public String getAnimaltype() {
         return animaltype;
