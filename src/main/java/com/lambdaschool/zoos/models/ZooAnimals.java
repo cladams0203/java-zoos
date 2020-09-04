@@ -21,12 +21,21 @@ public class ZooAnimals {
     @JoinColumn(name = "animalid")
     private Animals animal;
 
+    private String incomingzoo;
+
     public ZooAnimals() {
+    }
+
+    public ZooAnimals(Zoos zoo, Animals animal, String incomingzoo) {
+        this.zoo = zoo;
+        this.animal = animal;
+        this.incomingzoo = incomingzoo;
     }
 
     public ZooAnimals(Zoos zoo, Animals animal) {
         this.zoo = zoo;
         this.animal = animal;
+        this.incomingzoo = null;
     }
 
     public Zoos getZoo() {
@@ -44,4 +53,13 @@ public class ZooAnimals {
     public void setAnimal(Animals animal) {
         this.animal = animal;
     }
+
+    public String getIncomingzoo() {
+        return incomingzoo;
+    }
+
+    public void setIncomingzoo(String incomingzoo) {
+        this.incomingzoo = incomingzoo;
+    }
+
 }

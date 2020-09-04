@@ -20,18 +20,16 @@ public class AnimalServiceImpl implements AnimalService {
     @Transactional
     @Override
     public Animals save(Animals animal) {
-        Animals newAnimal = new Animals();
-        if(animal.getAnimalid() != 0){
-            animalrepos.findById(animal.getAnimalid())
-                    .orElseThrow(() -> new EntityNotFoundException("Animal " + animal.getAnimalid() + " not found"));
-            newAnimal.setAnimalid(animal.getAnimalid());
+        if(animal.getZoos().size() > 0){
+            throw new EntityNotFoundException("Zoos are not updated through animals");
         }
-        newAnimal.setAnimaltype(animal.getAnimaltype());
-        newAnimal.getZoos().clear();
-        for(ZooAnimals z : animal.getZoos()){
-            Zoos newZoo = zooService.findByZooId(z.getZoo().getZooid());
-            newAnimal.getZoos().add(new ZooAnimals(newZoo, newAnimal));
-        }
-        return animalrepos.save(newAnimal);
+        return animalrepos.save(animal);
+
+    }
+
+    @Override
+    public Animals findByAnimalId(long id) {
+        return animalrepos.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Animal " + id + " Not Found"));
     }
 }

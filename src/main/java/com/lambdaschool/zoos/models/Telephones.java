@@ -26,19 +26,18 @@ public class Telephones {
     public Telephones() {
     }
 
-    public Telephones(long phoneid, String phonenumber, String phonetype, Zoos zoo) {
-        this.phoneid = phoneid;
+    public Telephones( String phonenumber, String phonetype, Zoos zoo) {
+
         this.phonenumber = phonenumber;
         this.phonetype = phonetype;
         this.zoo = zoo;
     }
 
+
+
+
     public long getPhoneid() {
         return phoneid;
-    }
-
-    public void setPhoneid(long phoneid) {
-        this.phoneid = phoneid;
     }
 
     public String getPhonenumber() {
@@ -64,4 +63,5 @@ public class Telephones {
     public void setZoo(Zoos zoo) {
         this.zoo = zoo;
     }
+
 }
