@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "animals")
+@Table(name = "animal")
 public class Animals extends Auditable {
 
     @Id

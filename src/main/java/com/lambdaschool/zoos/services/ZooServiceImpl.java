@@ -6,9 +6,13 @@ import com.lambdaschool.zoos.models.ZooAnimals;
 import com.lambdaschool.zoos.models.Zoos;
 import com.lambdaschool.zoos.repository.ZooRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 
+@Transactional
+@Service(value = "zooService")
 public class ZooServiceImpl implements ZooService {
 
     @Autowired
@@ -23,6 +27,7 @@ public class ZooServiceImpl implements ZooService {
                 .orElseThrow(() -> new EntityNotFoundException("Zoo " + id + " Not Found"));
     }
 
+    @Transactional
     @Override
     public Zoos save(Zoos zoo) {
         Zoos newZoo = new Zoos();

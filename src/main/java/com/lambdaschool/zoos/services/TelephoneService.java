@@ -4,5 +4,7 @@ import com.lambdaschool.zoos.models.Telephones;
 
 public interface TelephoneService {
 
-    Telephones save(Telephones telephone);
+    Telephones save(String phonenumber, String phonetype, long zooid);
+
+
 }

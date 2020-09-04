@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "zoos")
+@Table(name = "zoo")
 public class Zoos extends Auditable {
 
     @Id

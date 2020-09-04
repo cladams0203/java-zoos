@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "telephones")
+@Table(name = "telephone")
 public class Telephones extends Auditable {
 
     @Id

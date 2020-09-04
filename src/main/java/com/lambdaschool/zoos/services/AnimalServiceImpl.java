@@ -5,10 +5,13 @@ import com.lambdaschool.zoos.models.ZooAnimals;
 import com.lambdaschool.zoos.models.Zoos;
 import com.lambdaschool.zoos.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 
+@Transactional
+@Service(value = "roleService")
 public class AnimalServiceImpl implements AnimalService {
 
     @Autowired

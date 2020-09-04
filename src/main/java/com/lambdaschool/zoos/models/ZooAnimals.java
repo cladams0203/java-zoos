@@ -24,21 +24,22 @@ public class ZooAnimals extends Auditable implements Serializable {
     @JoinColumn(name = "animalid")
     private Animals animal;
 
-    private String incomingzoo;
+
+//    private String incomingzoo;
 
     public ZooAnimals() {
     }
 
-    public ZooAnimals(Zoos zoo, Animals animal, String incomingzoo) {
-        this.zoo = zoo;
-        this.animal = animal;
-        this.incomingzoo = incomingzoo;
-    }
+//    public ZooAnimals(Zoos zoo, Animals animal, String incomingzoo) {
+//        this.zoo = zoo;
+//        this.animal = animal;
+//        this.incomingzoo = incomingzoo;
+//    }
 
     public ZooAnimals(Zoos zoo, Animals animal) {
         this.zoo = zoo;
         this.animal = animal;
-        this.incomingzoo = null;
+//        this.incomingzoo = null;
     }
 
     public Zoos getZoo() {
@@ -57,13 +58,13 @@ public class ZooAnimals extends Auditable implements Serializable {
         this.animal = animal;
     }
 
-    public String getIncomingzoo() {
-        return incomingzoo;
-    }
-
-    public void setIncomingzoo(String incomingzoo) {
-        this.incomingzoo = incomingzoo;
-    }
+//    public String getIncomingzoo() {
+//        return incomingzoo;
+//    }
+//
+//    public void setIncomingzoo(String incomingzoo) {
+//        this.incomingzoo = incomingzoo;
+//    }
 
     @Override
     public boolean equals(Object o) {
